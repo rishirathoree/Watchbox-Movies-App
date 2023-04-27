@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../Contexts/AuthProviderContext'
+import 'boxicons/css/boxicons.min.css'
 const Navbar = () => {
+  const {user} = useAuth()
+  const dispatch = useDispatch()
   return (
     <>
     <div className='w-full z-50 flex items-center justify-between fixed top-0 right-0 p-8'>
@@ -9,14 +14,29 @@ const Navbar = () => {
                 <p className='font-light uppercase leading-none text-xl text-red-500'>Watchbox</p>
                 </Link>
         </div>
-        <div className='flex items-center gap-4'>
+        {user
+      ? <>
+      <div>
+        <Link to="/account">
+          <i className='bx bx-user p-1 border-white border rounded-full'></i></Link>
+      </div>
+      </>  
+      :
+      <>
+      <div className='flex items-center gap-4'>
             <Link to="/login">
             <p className='font-semibold text-white uppercase text-xsm p-2 leading-none text-xl'>Sign In</p>
             </Link>
-            <Link to="/login">
+            <Link to="/Signup">
             <p className='font-semibold text-white uppercase text-xsm p-2 leading-none text-xl bg-red-500 bg-opacity-70'>Sign Up</p>
             </Link>
         </div>
+      </>
+      }
+        
+        
+        
+        
     </div>
     </>
   )

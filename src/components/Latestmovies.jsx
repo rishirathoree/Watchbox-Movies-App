@@ -7,7 +7,6 @@ const Latestmovies = () => {
   useEffect(() => {
     dispatch(fetchRequestPopular());
   }, [dispatch]);
-
   const { data, loading } = requestPopular;
   return (
     <>
@@ -30,7 +29,7 @@ const Latestmovies = () => {
               {data.results &&
                 data.results.map((items) => {
                   return (
-                    <div className="w-full h-full rounded-md overflow-hidden hover:scale-105 duration-500">
+                    <div key={items.id} className="w-full h-full rounded-md overflow-hidden hover:scale-105 duration-500">
                       <img
                         className="w-full h-full object-cover"
                         src={`https://image.tmdb.org/t/p/original/${items.backdrop_path}`}

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchRequestPopular } from '../actions/Dataactions'
 import Latestmovies from '../components/Latestmovies'
@@ -20,9 +20,9 @@ const Home = () => {
       </>
       :
       <>
-      {data.results && data.results.slice(9,10).map((items)=>{
+      {data.results && data.results.slice(3,4).map((items)=>{
         return(
-          <div className='w-full h-screen'>
+          <div key={items.id} className='w-full h-screen'>
             <div className='w-full h-screen'>
               <div className='w-full absolute h-screen bg-gradient-to-r from-black'></div>
             <img className='w-full h-full object-cover' src={`https://image.tmdb.org/t/p/original/${items.backdrop_path}`} alt="" />

@@ -3,6 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from "redux-thunk";
 import { Datareducer } from "../reducers/Datareducer";
 
+
 const rootReducer   = combineReducers({
     Data:Datareducer,
 })
