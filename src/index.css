@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;padding: 0;scroll-behavior: smooth;box-sizing: border-box;font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.text-xsm{font-size: 12px;}
+
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    background-color: rgb(83, 84, 84);
+    color: white;
+}
