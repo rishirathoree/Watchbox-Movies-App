@@ -44,7 +44,6 @@ const Home = () => {
       </>
     }
     <Tvshowslider />
-    <Latestmovies />
     </>
   )
 }

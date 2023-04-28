@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { fetchRequestPopular } from "../actions/Dataactions";
+import { Link } from "react-router-dom";
 const Latestmovies = () => {
     const dispatch = useDispatch()
   const requestPopular = useSelector((state) => state.Data.request1);
@@ -27,13 +28,14 @@ const Latestmovies = () => {
               {data.results &&
                 data.results.slice(0,4).map((items) => {
                   return (
-                    <div key={items.id} className="w-full h-full rounded-md overflow-hidden hover:scale-105 duration-500">
+                    <Link key={items.id} to={`movie/${items.id}`}>
+                      <div  className="w-full h-full rounded-md overflow-hidden hover:scale-105 duration-500">
                       <img
                         className="w-full h-full object-cover"
                         src={`https://image.tmdb.org/t/p/original/${items.backdrop_path}`}
                         alt=""
                       />
-                    </div>
+                    </div></Link>
                   );
                 })}
             </div>

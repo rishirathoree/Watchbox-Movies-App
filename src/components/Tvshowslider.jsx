@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { fetchTvShows } from "../actions/Dataactions";
+import { Link } from "react-router-dom";
 const Tvshowslider = () => {
     const dispatch = useDispatch()
   const Tvshow = useSelector((state) => state.Data.request2);
@@ -24,8 +25,8 @@ const Tvshowslider = () => {
   }
   return (
     <>
-      
-    
+
+
         <div className="p-4 relative w-full h-full">
         <p className="font-bold text-sm">Tv Shows</p>
         {loading ? (
@@ -42,13 +43,17 @@ const Tvshowslider = () => {
          <div className="p-4">
          <button onClick={handleNext} className="absolute z-50 left-6 top-36"><i className="bx p-2 rounded-full bg-gray-50 bg-opacity-40 bx-chevron-left"></i></button>
             <button onClick={handlePrev} className="absolute z-50 right-6 top-36"><i className="bx p-2 rounded-full bg-gray-50 bg-opacity-40 bx-chevron-right"></i></button>
-    <div ref={sliderContaineref} className="product-container flex overflow-x-hidden gap-4">
+    <div ref={sliderContaineref} className="product-container flex overflow-hidden gap-4">
       {
         data.results && data.results.map((items)=>{
           return(
-            <div key={items.id} className="min-w-[300px] h-[200px] bg-slate-200 overflow-hidden rounded-lg text-black">
+            <Link key={items.id} to={`/movie/${items.id}`}>
+              <div  className="min-w-[300px] relative h-[200px] bg-slate-200 overflow-hidden rounded-lg text-black">
+                {/* <div className="w-full h-full bg-gradient-to-t bg-opacity-10 from-black absolute"> */}
+                  <p className="font-light text-white bottom-4 left-4 absolute text-xsm">{items.title}</p>
+                {/* </div> */}
           <img className="w-full h-full object-cover" src={`https://image.tmdb.org/t/p/original/${items.backdrop_path}`} alt="" />
-      </div>
+      </div></Link>
           )
         })
       }

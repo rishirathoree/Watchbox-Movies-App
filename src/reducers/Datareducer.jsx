@@ -1,7 +1,8 @@
-import { PENDINGFETCHREQUESTPOPULAR, SUCCESSREQUESTPOPULAR, FAILEDREQUESTPOPULAR, PENDINGFETCHTVSHOW, SUCCESSTVSHOW, FAILEDTVSHOW } from "../actions/Dataactions";
+import { PENDINGFETCHREQUESTPOPULAR, SUCCESSREQUESTPOPULAR, FAILEDREQUESTPOPULAR, PENDINGFETCHTVSHOW, SUCCESSTVSHOW, FAILEDTVSHOW} from "../actions/Dataactions";
 const initialState = {
   request1: { data: [], loading: false, error: null },
   request2: { data: [], loading: false, error: null },
+
 };
 
 export const Datareducer = (state = initialState, action) => {
