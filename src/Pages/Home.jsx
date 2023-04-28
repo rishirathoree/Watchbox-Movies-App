@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchRequestPopular } from '../actions/Dataactions'
 import Latestmovies from '../components/Latestmovies'
+import Tvshowslider from '../components/Tvshowslider'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const Home = () => {
     {
       loading ? 
       <>
-      <div className='w-full h-[600px] animate-ping rounded-md bg-gray-800'></div>
+      <div className='w-full h-screen animate-ping rounded-md bg-gray-800'></div>
       </>
       :
       <>
@@ -42,6 +43,7 @@ const Home = () => {
       })} 
       </>
     }
+    <Tvshowslider />
     <Latestmovies />
     </>
   )

@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className='w-full z-50 flex items-center justify-between fixed top-0 right-0 p-8'>
         <div>
             <Link to="/">
-                <p className='font-light uppercase leading-none text-xl text-red-500'>Watchbox</p>
+                <p className='font-light p-1 uppercase leading-none text-lg text-red-500'>Watchbox</p>
                 </Link>
         </div>
         {user
