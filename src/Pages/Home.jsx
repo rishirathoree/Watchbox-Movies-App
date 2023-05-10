@@ -17,11 +17,23 @@ const Home = () => {
     {
       loading ? 
       <>
-      <div className='w-full h-screen animate-ping rounded-md bg-gray-800'></div>
+      <div className='w-full h-screen animate-shimmer bg-white'>
+      <div className='absolute lg:top-[30%] md:top-[20%] sm:top-[30%] p-8'>
+              <div>
+               <div className='w-[400px] h-12 bg-gray-50 rounded-lg '></div>
+               <div className='flex items-center gap-2 mt-2'>
+               <div className='w-32 h-12 bg-gray-50 rounded-lg '></div>
+               <div className='w-32 h-12 bg-gray-50 rounded-lg '></div>
+               </div>
+               <div className='lg:w-[800px] md:w-[600px] sm:w-[300px] h-8 my-2 bg-gray-50 rounded-lg '></div>
+               <div className='lg:w-[800px] md:w-[600px] sm:w-[300px] h-8 bg-gray-50 rounded-lg '></div>
+              </div>
+            </div>
+      </div>
       </>
       :
       <>
-      {data.results && data.results.slice(3,4).map((items)=>{
+      {data.results && data.results.slice(8,9).map((items)=>{
         return(
           <div key={items.id} className='w-full h-screen'>
             <div className='w-full h-screen'>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+
 import { useAuth } from '../Contexts/AuthProviderContext'
 import 'boxicons/css/boxicons.min.css'
 const Navbar = () => {
@@ -16,9 +17,13 @@ const Navbar = () => {
         </div>
         {user
       ? <>
-      <div>
+      <div className='flex items-center gap-3'>
         <Link to="/account">
           <i className='bx bx-user p-1 border-white border rounded-full'></i></Link>
+          <Link to="/searchpage">
+          <i className='bx bx-search p-1 border-white border rounded-full'></i></Link>
+      <div>
+      </div>
       </div>
       </>  
       :

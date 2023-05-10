@@ -7,6 +7,7 @@ import Account from "./Pages/Account";
 import Accountprotectedroute from "./Pages/Accountprotectedroute";
 import Displayinfo from "./Pages/Displayinfo";
 import Footer from "./components/Footer";
+import Searchpage from "./Pages/Searchpage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/Searchpage" element={<Searchpage />} />
           <Route path="movie/:id" element={<Displayinfo />} />
           <Route path="/account/*" element={<Accountprotectedroute><Account /></Accountprotectedroute>} />
         </Routes>

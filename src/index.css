@@ -13,10 +13,14 @@ body{
 
 .text-xsm{font-size: 12px;}
 
+/* ::selection {
+  background-color: #e6fffac8;
+  color: black;
+} */
+
 /* Set the style for the scrollbar track */
 ::-webkit-scrollbar-track {
-  background-color: #333;
-}
+  background-color: #333;}
 
 /* Set the style for the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
@@ -37,3 +41,12 @@ body{
     height: 8px;
   }
   
+
+  @keyframes shimmer {
+    50% {
+        opacity: .9;
+    }
+}
+.animate-shimmer {
+    animation: shimmer .9s cubic-bezier(0.4, 0, 0.9, 1) infinite;
+}

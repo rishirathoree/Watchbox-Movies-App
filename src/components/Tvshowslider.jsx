@@ -31,11 +31,21 @@ const Tvshowslider = () => {
         <p className="font-bold text-sm">Tv Shows</p>
         {loading ? (
           <>
-            <div className="grid grid-cols-4 gap-4">
-              <div className="w-full h-[200px] animate-pulse rounded-md bg-gray-800"></div>
-              <div className="w-full h-[200px] animate-pulse rounded-md bg-gray-800"></div>
-              <div className="w-full h-[200px] animate-pulse rounded-md bg-gray-800"></div>
-              <div className="w-full h-[200px] animate-pulse rounded-md bg-gray-800"></div>
+            <div className="grid lg:grid-cols-4 md:grid-col-3 sm:grid-cols-3 gap-4">
+              <div className="w-full h-[200px] relative animate-pulse rounded-md bg-white">
+              <div className=" left-4 bottom-4 absolute lg:w-40 md:w-20 sm:w-12  rounded-lg h-4 bg-slate-100"></div>
+              </div>
+              <div className="w-full h-[200px] relative animate-pulse rounded-md bg-white">
+              <div className=" left-4 bottom-4 absolute lg:w-40 md:w-20 sm:w-12  rounded-lg h-4 bg-slate-100"></div>
+              </div>
+
+              <div className="w-full h-[200px] sm:block lg:block  md:hidden relative animate-pulse rounded-md bg-white">
+              <div className=" left-4 bottom-4 absolute lg:w-40 md:w-20 sm:w-12  rounded-lg h-4 bg-slate-100"></div>
+              </div>
+              <div className="w-full h-[200px] sm:hidden lg:block  md:block relative animate-pulse rounded-md bg-white">
+              <div className=" left-4 bottom-4 absolute lg:w-40 md:w-20 sm:w-12  rounded-lg h-4 bg-slate-100"></div>
+              </div>
+              
             </div>
           </>
         ) : (
